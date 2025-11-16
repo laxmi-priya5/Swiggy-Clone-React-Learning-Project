@@ -1,39 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Header from './Components/Header'
-import Body from './Components/Body'
-
-const Card = (props)=>{
-  const {resData} = props;
-  const {name,
-        aggregatedDiscountInfoV3,
-        avgRating,
-        sla,
-        cuisines,
-        cloudinaryImageId,
-        locality,
-        id} = resData?.card.card.info
-  return (
-    <div className="card">
-     <div className="position">
-        <div className="card-img-container">
-        <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId} alt="" className="card-img" />
-       </div>
-       <div className='cost'><h2>{aggregatedDiscountInfoV3.header} {resData.card.card.info.aggregatedDiscountInfoV3.subHeader}</h2></div>
-     </div>
-        
-    
-      <h3>{name}</h3>
-      <span className="rating"><b>{avgRating} • </b></span>
-      <b>{sla.slaString}</b>
-      <p>{cuisines.join(", ")}</p>
-      <p>{locality}</p>
-    </div>
-  )
-}
-
 const resList = [{
 "card": {
 "card": {
@@ -702,38 +666,6 @@ const resList = [{
 "relevance": {
 "type": "RELEVANCE_TYPE_ON_MENU_RETURN",
 "sectionId": "MENU_RETURN_FOOD"
-}}}]
+}}}];
 
-// const Body = ()=>{
-//   return (
-//     <>
-//     <div className='body'>
-//        <input type="text" className="search"placeholder='search....'/>
-//       <div className="card-section">
-//       {
-//         resList.map((restaurant)=> <Card key={restaurant.id} resData={restaurant}/>)
-//       }
-     
-//        </div>
-//     </div>
-   
-//     </>
-//   )
-// }
-
-function App() {
-
-
-  return (
-    <div className='app'>
-       
-        <Header/>
-        <Body/>
-        
-
-
-    </div>
-  )
-}
-
-export default App           
+export default resList;
