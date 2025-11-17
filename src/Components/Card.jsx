@@ -5,6 +5,7 @@ const Card = (props)=>{
   const {name,
         aggregatedDiscountInfoV3,
         avgRating,
+        externalRatings,
         sla,
         cuisines,
         cloudinaryImageId,
@@ -16,12 +17,12 @@ const Card = (props)=>{
         <div className="card-img-container">
         <img src={IMG_LINK + cloudinaryImageId} alt="" className="card-img" />
        </div>
-       <div className='cost'><h2>{aggregatedDiscountInfoV3.header} {resData.card.card.info.aggregatedDiscountInfoV3.subHeader}</h2></div>
+       <div className='cost'><h2>{aggregatedDiscountInfoV3?.header} {resData.card.card.info.aggregatedDiscountInfoV3?.subHeader}</h2></div>
      </div>
         
     
       <h3>{name}</h3>
-      <span className="rating"><b>{avgRating} • </b></span>
+      <span className="rating"><b>{avgRating  || externalRatings.aggregatedRating.rating} • </b></span>
       <b>{sla.slaString}</b>
       <p>{cuisines.join(", ")}</p>
       <p>{locality}</p>
