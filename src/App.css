@@ -8,10 +8,7 @@ body{
    margin-bottom: 10px;
 }
 
-/* .app{
-  max-width: 1200px;
-  margin:auto;
-} */
+
 
 .image{
   width:100px;
@@ -72,7 +69,7 @@ body{
 
 }
 
-.search{
+.filter{
   padding:5px 10px;
   margin: 30px;
   margin-left: 100px;
@@ -96,4 +93,63 @@ body{
 .body{
   background-color: rgba(206, 204, 204, 0.793);
 
+}
+.shimmer-card-section{
+  max-width: 1200px;
+  margin:auto;
+  margin-top:10px;
+  display:flex;
+  gap:12px;
+  flex-wrap: wrap;
+}
+
+.shimmer-card{
+  width:280px;
+  height:300px;
+  background-color: lightgray;
+  padding:5px;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+.shimmer-filter{
+  padding:5px 10px;
+  margin: 30px;
+  margin-left: 100px;
+  height:28px;
+  width:180px;
+  border: none;
+  background-color: lightgray;
+ 
+  border-radius: 3px;
+
+}
+
+.login{
+  padding:5px 10px;
+  font-size: medium;
+}
+.search{
+  padding:5px 10px;
+  /* margin: 30px; */
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: medium;
+  border: none;
+  background-color: gray;
+  color: #FEFEFE;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.searchInput{
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: medium;
+}
+.shimmer-searchInput{
+  padding: 6px 10px;
+  border: none;
+
+  background-color: lightgray;
 }

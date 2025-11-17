@@ -16,6 +16,8 @@
 - hooks are normal js utility function
 - whenever a state variable (useSate) updates react rerender the UI.
 - remember import useSate function/component/react element as named import
+- useEffect hook called after the component(which contains this hook) render;
+- so that we use it to make api call when we follow the rendering pattern (Loads → Render → API → Re-render)
 
 # react recocilliation algorithm (react fibre)
 
@@ -44,3 +46,7 @@
 - Render: Initial render with empty/default state
 - API: Data is fetched asynchronously
 - Re-render: Component updates once data arrives
+
+# look at the login btn on header
+
+- when this state variable changes from login to logout or vice versa even though the total header component rerender again still it not update the total thing again it only update the button which changed by effective dom manipulation (based on finding the difference between older virtual dom and new virtual dom by applying diff algo)
