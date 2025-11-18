@@ -50,3 +50,25 @@
 # look at the login btn on header
 
 - when this state variable changes from login to logout or vice versa even though the total header component rerender again still it not update the total thing again it only update the button which changed by effective dom manipulation (based on finding the difference between older virtual dom and new virtual dom by applying diff algo)
+
+# note on useEffect
+
+- with no depedency array in useEffect => called on each render of that component
+- with empty dependency array like [] => called only once for initial rendering (the component rendering for firsttime )
+- when put some depedency inside depedency array then it is called on everytime of depedency changes / updates
+
+# note on useState
+
+-always call useSate hook inside the functional component (as local state variable) not outside of any functional component.
+
+- always try to call on the top.
+- never call useState inside if else (condition), for (loop),functions.
+
+# react router dom
+
+- handle error during routing:-
+
+* react router provide us one hook called (useRouteError) through which we can customize our error when three is no such path exist .
+
+- it also provides outlet component to reneder different children component
+- also provides link component to link another page without using anchor(which causes reloading again)

@@ -20,12 +20,14 @@ const Card = (props)=>{
        <div className='cost'><h2>{aggregatedDiscountInfoV3?.header} {aggregatedDiscountInfoV3?.subHeader}</h2></div>
      </div>
         
-    
+     <div className="card-text">
       <h3>{name}</h3>
       <span className="rating"><b>{avgRating  || externalRatings.aggregatedRating.rating} • </b></span>
       <b>{sla.slaString}</b>
       <p>{cuisines.join(", ")}</p>
       <p>{locality}</p>
+     </div>
+     
     </div>
   )
 }

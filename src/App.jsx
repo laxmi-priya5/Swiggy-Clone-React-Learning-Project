@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './Components/Header'
 import Body from './Components/Body'
+import { Outlet } from 'react-router-dom'
 
 const Card = (props)=>{
   const {resData} = props;
@@ -36,22 +37,6 @@ const Card = (props)=>{
 
 
 
-// const Body = ()=>{
-//   return (
-//     <>
-//     <div className='body'>
-//        <input type="text" className="search"placeholder='search....'/>
-//       <div className="card-section">
-//       {
-//         resList.map((restaurant)=> <Card key={restaurant.id} resData={restaurant}/>)
-//       }
-     
-//        </div>
-//     </div>
-   
-//     </>
-//   )
-// }
 
 function App() {
 
@@ -60,10 +45,8 @@ function App() {
     <div className='app'>
        
         <Header/>
-        <Body/>
-        
-
-
+        <Outlet/>
+    
     </div>
   )
 }
