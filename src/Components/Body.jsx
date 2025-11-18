@@ -9,21 +9,28 @@ import Shimmer from './Shimmer';
 const Body = ()=>{
   
   const [Rest , setRest] = useState([]);  // array destrcturing 
+  const [searchedRest , setSearchedRest] = useState([]);
   const [searchText , setSearchText] = useState("");
   useEffect(()=>{
     fetchData();
   },[]);
 
+
+
   const fetchData =async ()=>{
 
     
-     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null")
+    //  const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null")
+     const data = await fetch ("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5576801&lng=77.348953&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
      const json = await data.json();
   
-    const slicedcards = json.data.cards.slice(3,json.data.cards.length);
+    // const slicedcards = json.data.cards.slice(3,json.data.cards.length);
+    
+    const slicedcards = json.data.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants;
 
+    
     setRest(slicedcards);
-     
+    setSearchedRest(slicedcards);
      
      
   };
@@ -31,6 +38,7 @@ const Body = ()=>{
   if(Rest.length === 0){
     return <Shimmer/>
   }
+
   return (
     <>
     <div className='body'>
@@ -41,16 +49,19 @@ const Body = ()=>{
              const filteredRest = Rest.filter(result => 
               {
                 
-                let rating = result?.card?.card?.info?.avgRating;
+                let rating = result?.info?.avgRating;
                 if(!rating){
-                  rating =  result?.card?.card?.info?.externalRatings?.aggregatedRating?.rating;
+                  rating =  result?.info?.externalRatings?.aggregatedRating?.rating;
                 }
                 
                 
-                return rating >= 4.3;
+               
+               
+                return rating >= 4.5;
               });
                setRest(filteredRest);
-         
+               setSearchedRest(filteredRest);
+               
        
       }}>
       top rated restaurants</button>
@@ -62,20 +73,20 @@ const Body = ()=>{
       <button className="search" onClick={()=>{
         
           const newRest= Rest.filter(res=> {
-          console.log(searchText.toLowerCase());
-          return res.card.card.info.name.toLowerCase().includes(searchText.toLowerCase()) ;
+        
+          return res.info.name.toLowerCase().includes(searchText.toLowerCase()) ;
           
           
           
         })
-        console.log(newRest);
-        setRest(newRest);
-        console.log("clicked");
+   
+        setSearchedRest(newRest);
+     
         
       }}>search</button>
       <div className="card-section">
       {
-        Rest.map((restaurant)=> <Card key={restaurant.card.card.info.id} resData={restaurant}/>)
+        searchedRest.map((restaurant)=> <Card key={restaurant.info.id} resData={restaurant}/>)
       }
      
        </div>

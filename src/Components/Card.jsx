@@ -10,14 +10,14 @@ const Card = (props)=>{
         cuisines,
         cloudinaryImageId,
         locality,
-        id} = resData?.card.card.info
+        id} = resData?.info
   return (
     <div className="card">
      <div className="position">
         <div className="card-img-container">
         <img src={IMG_LINK + cloudinaryImageId} alt="" className="card-img" />
        </div>
-       <div className='cost'><h2>{aggregatedDiscountInfoV3?.header} {resData.card.card.info.aggregatedDiscountInfoV3?.subHeader}</h2></div>
+       <div className='cost'><h2>{aggregatedDiscountInfoV3?.header} {aggregatedDiscountInfoV3?.subHeader}</h2></div>
      </div>
         
     
