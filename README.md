@@ -145,3 +145,7 @@ When a class component is first added to the DOM, React follows this sequence:
    - Fetching data from APIs
    - Setting up subscriptions or timers
    - DOM manipulations
+
+# React life cycle method diagram
+
+- follow the link => https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/

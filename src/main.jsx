@@ -7,6 +7,7 @@ import Error from './Components/Error.jsx'
 import Contact from './Components/Contact.jsx'
 import Body from './Components/Body.jsx'
 import RestaurantMenu from './Components/RestaurantMenu.jsx'
+import { useParams } from 'react-router-dom'
 
 
 import { createBrowserRouter , RouterProvider } from 'react-router-dom'
@@ -41,6 +42,7 @@ const appRouter =createBrowserRouter([
     ],
     errorElement:<Error/>
   },
+ 
   
 ])
 createRoot(document.getElementById('root')).render(
