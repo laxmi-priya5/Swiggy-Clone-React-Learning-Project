@@ -72,3 +72,76 @@
 
 - it also provides outlet component to reneder different children component
 - also provides link component to link another page without using anchor(which causes reloading again)
+
+# Types of Routing
+
+- there are two types of routing :-
+  1-server side routing
+  2-client side routing
+
+# Client-Side Routing in SPA (React)
+
+✅ What It Means
+
+- In a Single Page Application (SPA), the browser loads a single HTML file initially.
+- Routing is handled by JavaScript (e.g., React Router), not by the server.
+- When you navigate between pages (like /home → /about), the URL changes, but the page doesn’t reload.
+- Instead, React swaps components dynamically — only the part of the UI that needs to change is re-rendered.
+
+# class-based component
+
+- A class-based component is a JavaScript class that extends React.Component. It must include a render() method, which returns JSX — the UI you want to display.
+
+Example:-
+import React { Component } from 'react';
+
+class MyComponent extends Component {
+render() {
+return (
+
+<div>
+<h1>Hello from Class Component!</h1>
+</div>
+);
+}
+}
+export default MyComponent;
+
+# functional component
+
+- Normal javascript function which return jsx
+
+# Passing props to a class based component
+
+- when we pass props to class-based component that component access that by using constructor
+- If you're not using state or custom methods, you can skip the constructor entirely. React will handle the default setup behind the scenes.
+
+# Sate variables in class based component
+
+- we must declare a stete variable always inside constructor and like
+  this.state = {
+  followers : 0
+
+       }
+
+# component did mount
+
+- component did mount is used to make api call inside class based component .
+- as in functional component we use useEffect to make api call because it call the api after rendering
+- same in the case of componentDidMount() - this is also called after rendering of the component
+
+When a class component is first added to the DOM, React follows this sequence:
+
+1. Constructor (optional)
+   - Used to initialize state and bind methods.
+   - Called once before anything is rendered.
+2. render()
+   - Returns the JSX to be displayed.
+   - Called before the component appears on screen.
+3. componentDidMount()
+
+   - Called once, immediately after the component is mounted (i.e., inserted into the DOM).
+   - Ideal for:
+   - Fetching data from APIs
+   - Setting up subscriptions or timers
+   - DOM manipulations

@@ -3,7 +3,7 @@ import Card from './Card';
 // import resList from '../utils/mockData'; 
 import { useState , useEffect } from 'react';
 import Shimmer from './Shimmer';
-
+import { Link } from 'react-router-dom';
 
 
 const Body = ()=>{
@@ -19,12 +19,12 @@ const Body = ()=>{
 
   const fetchData =async ()=>{
 
-    
-    //  const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null")
+
      const data = await fetch ("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5576801&lng=77.348953&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+
+     
+     
      const json = await data.json();
-  
-    // const slicedcards = json.data.cards.slice(3,json.data.cards.length);
     
     const slicedcards = json.data.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants;
 
@@ -53,11 +53,7 @@ const Body = ()=>{
                 if(!rating){
                   rating =  result?.info?.externalRatings?.aggregatedRating?.rating;
                 }
-                
-                
-               
-               
-                return rating >= 4.5;
+                 return rating >= 4.5;
               });
                setRest(filteredRest);
                setSearchedRest(filteredRest);
@@ -86,7 +82,7 @@ const Body = ()=>{
       }}>search</button>
       <div className="card-section">
       {
-        searchedRest.map((restaurant)=> <Card key={restaurant.info.id} resData={restaurant}/>)
+        searchedRest.map((restaurant)=> <Link key={restaurant.info.id} to="/restaurant"><Card  resData={restaurant}/></Link>)
       }
      
        </div>
