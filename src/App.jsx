@@ -6,6 +6,8 @@ import Header from './Components/Header'
 import Body from './Components/Body'
 import { Outlet } from 'react-router-dom'
 
+
+
 const Card = (props)=>{
   const {resData} = props;
   const {name,

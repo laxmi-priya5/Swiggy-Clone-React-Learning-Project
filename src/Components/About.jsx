@@ -27,7 +27,7 @@ const About = ()=>{
           
     }
     fetchApi();
-  } ,[])   //never miss empty depedency array
+  } ,[])   //never miss empty depedency array  
    
     return(
         <> 
