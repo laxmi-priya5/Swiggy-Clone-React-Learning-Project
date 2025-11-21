@@ -1,43 +1,42 @@
 import DishCard from "./DishCard";
+import { dishData } from "../utils/mockData";
+import { useState } from "react";
+import RestaurantCatagory from './RestaurantCatagory'
+
 const RestaurantMenu = ()=>{
     // THIS IS FAKE DATA
-  const menu = {
-  "Croissants & Danishes": [
-    {
-      name: "Butter Croissant",
-      price: 90,
-      rating: 4.7,
-      desc: "Flaky pastry laminated with butter."
-    },
-    {
-      name: "Pain Au Chocolat",
-      price: 105,
-      rating: 4.7,
-      desc: "Chocolate folded between flaky Danish pastry dough."
-    },
-    {
-      name: "Blueberry Danish",
-      price: 105,
-      rating: 3.9,
-      desc: "Blueberry jam and custard in buttery pastry."
-    }
-  ]
-};
+     const menu = dishData;
+     const [showItems , setShowItems] = useState(false);
 
+     const handleClick = ()=>{
+      setShowItems(!showItems);
+     }
 
     return (
         <>
-            <div className="menu-section card-section">
+            <div className="menu-section ">
                 {Object.entries(menu).map(([category, items]) => (
-                    <div key={category}>
-                    <h2>{category}</h2>
-                    <div className="dish-list">
-                        {items.map((dish, i) => (
-                        <DishCard key={i} {...dish} />
+                    
+                    <div key={category} className = "menu" onClick={handleClick}>
+                    <div className="lower-menu" >
+                         <h3>{category}</h3>
+                         <span>⬇️</span>
+                    </div>
+                    
+                     <div className="dish-list"> 
+                        {items.map((dish, i) => ( 
+                        showItems && <DishCard key={i} {...dish} />
                         ))}
-                    </div>
-                    </div>
+                    </div> 
+                    </div>  
                 ))}
+               
+            </div>
+            <div className="menu-section">
+              {
+                Object.entries(menu).map(([catagory,i])=>(<RestaurantCatagory key={catagory} data={catagory} items={i}/>))
+                // Object.entries(menu).map((oneMenu,i)=>(console.log(oneMenu , i)))
+              }
             </div>
 
         </>

@@ -149,3 +149,9 @@ When a class component is first added to the DOM, React follows this sequence:
 # React life cycle method diagram
 
 - follow the link => https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+# read this concept
+
+- lazy loading
+- higher order component
+- react fiber

@@ -20,7 +20,7 @@ const Body = ()=>{
     fetchData();
   },[]);
 
-
+  console.log(Rest);
   
   const fetchData =async ()=>{
    const data = await fetch ("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5576801&lng=77.348953&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")

@@ -252,3 +252,24 @@ body{
 .text-sec{
   margin-right:2px;
 }
+.menu-section{
+  width:50%;
+  margin:auto;
+}
+.menu{
+  margin-top: 5px;
+  background-color:rgba(255, 255, 255, 0.889);
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.lower-menu{
+  display:flex;
+  justify-content: space-between;
+
+  span{
+    margin-top:18px;
+    cursor: pointer;
+  }
+}
