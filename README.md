@@ -152,6 +152,23 @@ When a class component is first added to the DOM, React follows this sequence:
 
 # read this concept
 
+-use Paramss
+
 - lazy loading
 - higher order component
 - react fiber
+- lifting state up
+- props drilling
+  - props drilling is the problem and its one solution is use context
+
+# React redux
+
+- redux is one of the separate library used for state management
+- there is also another library called zustand
+
+# small mistakes while using react redux
+
+- while subscribing the app store don't select the whole store just select spacific portion
+  ex :-
+  const items = useSelector((store) => store)
+- where use reducer and where use reducers:- inside crateSlice use reducers as there are multiple samll samll reducer function but in store use reducer and when exporting in slice use reducer

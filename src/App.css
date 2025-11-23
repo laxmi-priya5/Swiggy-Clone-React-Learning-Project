@@ -255,6 +255,7 @@ body{
 .menu-section{
   width:50%;
   margin:auto;
+
 }
 .menu{
   margin-top: 5px;
@@ -273,3 +274,22 @@ body{
     cursor: pointer;
   }
 }
+.clear{
+  
+  margin-right: 5px;
+  font-weight: bold;
+  font-size: medium;
+  border: none;
+  background-color: gray;
+  color: #FEFEFE;
+  border-radius: 3px;
+  cursor: pointer;
+  width:100px;
+ 
+}
+
+.cart-body{
+  display:flex;
+  justify-content: space-between;
+}
+

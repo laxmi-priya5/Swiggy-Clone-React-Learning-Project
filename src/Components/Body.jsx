@@ -1,10 +1,11 @@
 
 import Card from './Card';
 // import resList from '../utils/mockData'; 
-import { useState , useEffect } from 'react';
+import { useState , useEffect , useContext} from 'react';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
+
 
 
 const Body = ()=>{
@@ -81,7 +82,7 @@ const Body = ()=>{
       }}>search</button>
       <div className="card-section">
       {
-        searchedRest.map((restaurant)=> <Link key={restaurant.info.id} to="/restaurant"><Card  resData={restaurant}/></Link>)
+        searchedRest.map((restaurant)=> <Link key={restaurant.info.id} to="/restaurant"><Card  resData={restaurant} /></Link>)
       }
      
        </div>

@@ -7,6 +7,7 @@ import Error from './Components/Error.jsx'
 import Contact from './Components/Contact.jsx'
 import Body from './Components/Body.jsx'
 import RestaurantMenu from './Components/RestaurantMenu.jsx'
+import Cart from './Components/Cart.jsx'
 
 
 
@@ -43,6 +44,10 @@ const appRouter =createBrowserRouter([
       {
         path:'/grocery',
         element:(<Suspense fallback={<h1>Loading......</h1>}><Grocery/></Suspense>)  //route to lazy loading
+      },
+      {
+        path:'/cart',
+        element:<Cart/>,
       },
      
     ],

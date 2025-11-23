@@ -2,7 +2,7 @@ import UserClass from "./UserClass";
 import User from "./User"
 import {useState} from 'react'
 import { useEffect } from "react";
-
+import UserContext from '../utils/UserContext'
 
 const About = ()=>{
  
@@ -28,10 +28,13 @@ const About = ()=>{
     }
     fetchApi();
   } ,[])   //never miss empty depedency array  
+
+ 
    
     return(
         <> 
-        <h1>Information about User</h1>
+        <UserContext.Consumer>{({loggedInUser})=><h2>{loggedInUser}</h2>}</UserContext.Consumer>
+        <h2>Information about User</h2>
         <div className = "about">
         
           {/*  passing props to class based component */}
