@@ -8,6 +8,7 @@ import { Outlet } from 'react-router-dom'
 import UserContext from './utils/UserContext'
 import {Provider} from 'react-redux'
 import appStore from './utils/AppStore'
+import Footer from './Components/Footer'
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <UserContext.Provider value={{loggedInUser:user}}>
                   <Header/>
                   <Outlet/>
+                  <Footer/>
           </UserContext.Provider>
         
        </Provider>

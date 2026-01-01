@@ -172,3 +172,11 @@ When a class component is first added to the DOM, React follows this sequence:
   ex :-
   const items = useSelector((store) => store)
 - where use reducer and where use reducers:- inside crateSlice use reducers as there are multiple samll samll reducer function but in store use reducer and when exporting in slice use reducer
+
+# typesof testing:-
+
+- unit testing
+  -testing one component in isolation
+- integration testing
+  -testing that part where multiple components are integrated solving one task by talking with each other
+- end to end testing

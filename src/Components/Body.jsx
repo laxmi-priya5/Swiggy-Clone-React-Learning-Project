@@ -14,22 +14,30 @@ const Body = ()=>{
   const [searchedRest , setSearchedRest] = useState([]);
   const [searchText , setSearchText] = useState("");
 
+
   const status = useOnlineStatus();  // this is a custom hooks
 
   //here we make api call within this component but we can do this by using custom hook 
-  useEffect(()=>{
-    fetchData();
-  },[]);
 
-  console.log(Rest);
+  useEffect(()=>{
+      fetchData();
+  } , [])
+
+
+
   
   const fetchData =async ()=>{
-   const data = await fetch ("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5576801&lng=77.348953&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+  
+   const data = await fetch (`https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5576801&lng=77.348953&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`)
     const json = await data.json();
     const slicedcards = json.data.cards[4].card?.card?.gridElements?.infoWithStyle?.restaurants;
-    setRest(slicedcards);
+    // setRest(slicedcards);
+    setRest( slicedcards);
+
+    // setSearchedRest(slicedcards);
     setSearchedRest(slicedcards);
-    
+ 
+
   };
 
   //conditional rendering  
