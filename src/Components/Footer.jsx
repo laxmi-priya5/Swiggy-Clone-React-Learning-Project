@@ -3,7 +3,7 @@ import { FaLinkedin, FaInstagram, FaFacebook, FaPinterest, FaTwitter } from "rea
 
 const Footer = () => {
   return (
-     <footer className="footer">
+     <footer className="footer mt-10">
       <div className="footer-top">
         {/* Company */}
         <div className="footer-section">
