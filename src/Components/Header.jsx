@@ -27,9 +27,9 @@ const Header = ()=>{
            <li>Online status : {status == true ?"✅":"🔴" }</li>
            <li><Link to='/grocery'>Grocery</Link></li>
            <li><Link to='/'>Home</Link></li>
-           <li><Link to='/about'>About</Link></li>
-           <li><Link to='/contact'>Contact Us</Link></li>
-           <li><Link to='/cart'>Cart({cart.length})</Link></li>
+           {/* <li><Link to='/about'>About</Link></li> */}
+           {/* <li><Link to='/contact'>Contact Us</Link></li> */}
+           <li><Link to='/cart'>🛒({cart.length})</Link></li>
            <button className="login" onClick={()=>{
              btn === "Login" ? setBtn("Logout") :setBtn("Login") ;
            }}>{btn}</button>
